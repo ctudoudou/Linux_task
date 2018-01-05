@@ -1,3 +1,10 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Time    : 2017/12/25 下午4:51
+# @Author  : tudoudou
+# @File    : urls.py
+# @Software: PyCharm
+
 """task URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -13,11 +20,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path, include
+from django.urls import path,include
+from .views import *
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('app.urls')),
-    path('myadmin/', include('myadmin.urls'))
+    path('',index,name='index'),
+    path('rooms/',room,name='room'),
+    path(''),
 ]
