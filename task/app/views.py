@@ -6,6 +6,16 @@ from .models import *
 
 
 def index(request):
+    """首頁函數
+
+    Parameters
+    ----------
+    request
+
+    Returns
+    -------
+
+    """
     try:
         user = User.objects.get(username=request.session['username'])
     except:
@@ -13,6 +23,31 @@ def index(request):
     return render(request, 'index.html', {user: user})
 
 
-def room(request):
+def rooms(request):
+    """房屋展示函數
 
-    return render(request,'room.html',)
+    Parameters
+    ----------
+    request
+
+    Returns
+    -------
+
+    """
+
+    return render(request,'rooms.html',{})
+
+
+def news(request):
+    """暫時模塊
+
+    Parameters
+    ----------
+    request
+
+    Returns
+    -------
+
+    """
+
+    return render(request,'news.html',{})
