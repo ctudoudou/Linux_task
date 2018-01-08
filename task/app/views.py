@@ -20,7 +20,10 @@ def index(request):
         user = User.objects.get(username=request.session['username'])
     except:
         user = None
-    return render(request, 'index.html', {user: user})
+
+    Rooms=Room.objects.all().order_by('number')[:4]
+
+    return render(request, 'index.html', {user: user,'list': Rooms,'l_post':[1,1]})
 
 
 def rooms(request):
