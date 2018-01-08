@@ -21,9 +21,11 @@ def index(request):
     except:
         user = None
 
-    Rooms=Room.objects.all().order_by('number')[:4]
+    rooms=Room.objects.all().order_by('number')[:4]
+    posts=Latest_post.objects.all().order_by('time')[:2]
+    # TODO 繼續視圖函數
 
-    return render(request, 'index.html', {user: user,'list': Rooms,'l_post':[1,1]})
+    return render(request, 'index.html', {user: user,'list': rooms,'l_post':posts})
 
 
 def rooms(request):
