@@ -27,4 +27,5 @@ urlpatterns = [
     path('', index, name='index'),
     path('rooms/', rooms, name='room'),
     path('news/', news,name='news'),
+    path('ac')
 ]

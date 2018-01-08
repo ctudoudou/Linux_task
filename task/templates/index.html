@@ -44,10 +44,9 @@
                             <div class="inner_wrap1">
                                 <ul class="item_module">
                                     <li class="module_right">
-                                        <h5>内部环境</h5>
-                                        <p>"Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-                                            suscipit lobortis nisl ut aliquip ex ea commodo consequat."</p>
-                                        <a href="signal1.html" class="content_btn">....read more</a>
+                                        <h5>{{ i.title|truncatechars:'10' }}</h5>
+                                        <p>{{ i.content|truncatechars:'50' }}</p>
+                                        <a href="/article?id={{ i.id }}" class="content_btn">....read more</a>
                                     </li>
                                     <div class="clearfix"></div>
                                 </ul>
