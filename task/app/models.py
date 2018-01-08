@@ -23,6 +23,7 @@ class Room(models.Model):
     """
     room_number = models.CharField(max_length=10, unique=True, null=False)
     price = models.IntegerField()
+    img=models.ImageField(upload_to='./static/upload',default='img/l2.jpg')
     category = models.CharField(max_length=10)
     available = models.BooleanField(default=1)
     status=models.IntegerField(default=1)
