@@ -36,10 +36,11 @@ class Room(models.Model):
 class Latest_post(models.Model):
     """
     帖子
-    標題, 發布時間, 發布人, 內容, 配圖
+    標題, 發布時間, 發布人, 內容, 配圖, 浏览次数
     """
     title = models.CharField(max_length=50)
     time = models.DateTimeField(auto_now=True)
     author = models.CharField(max_length=20)
     content = models.CharField(max_length=500)
     img = models.ImageField(upload_to='./static/upload/')
+    views = models.IntegerField(default=1)
