@@ -19,16 +19,15 @@ class User(models.Model):
 class Room(models.Model):
     """
     房屋表
-    房屋編號, 價格, 圖片，房屋類別, 是否可用(1: 可用, 0:不可用), 是否租出(1: 未租出,2: 已出租,3: 已預訂), 預定/出租用戶，評價，評價分數
+    房屋編號, 價格, 圖片，房屋類別, 是否可用(1: 可用, 0:不可用), 是否租出(1: 未租出,2: 已出租,3: 已預訂), 預定/出租用戶, 評價, 預定次數, 評價分數
     """
     room_number = models.CharField(max_length=10, unique=True, null=False)
     price = models.IntegerField()
-    img=models.ImageField(upload_to='./static/upload',default='img/l2.jpg')
+    img = models.ImageField(upload_to='./static/upload', default='img/l2.jpg')
     category = models.CharField(max_length=10)
     available = models.BooleanField(default=1)
-    status=models.IntegerField(default=1)
-    user=models.CharField(max_length=30,null=True)
-    evaluation=models.CharField(max_length=100,default='暫無評價')
-    fraction=models.CharField(max_length=10,default='star2.png')
-
-
+    status = models.IntegerField(default=1)
+    user = models.CharField(max_length=30, null=True)
+    evaluation = models.CharField(max_length=100, default='暫無評價')
+    number = models.IntegerField(default=0)
+    fraction = models.CharField(max_length=10, default='star2.png')
