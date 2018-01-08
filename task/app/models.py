@@ -23,7 +23,7 @@ class Room(models.Model):
     """
     room_number = models.CharField(max_length=10, unique=True, null=False)
     price = models.IntegerField()
-    img = models.ImageField(upload_to='./static/upload', default='img/l2.jpg')
+    img = models.ImageField(upload_to='./static/upload/', default='img/l2.jpg')
     category = models.CharField(max_length=10)
     available = models.BooleanField(default=1)
     status = models.IntegerField(default=1)
@@ -31,3 +31,15 @@ class Room(models.Model):
     evaluation = models.CharField(max_length=100, default='暫無評價')
     number = models.IntegerField(default=0)
     fraction = models.CharField(max_length=10, default='star2.png')
+
+
+class Latest_post(models.Model):
+    """
+    帖子
+    標題, 發布時間, 發布人, 內容, 配圖
+    """
+    title = models.CharField(max_length=50)
+    time = models.DateTimeField(auto_now=True)
+    author = models.CharField(max_length=20)
+    content = models.CharField(max_length=500)
+    img = models.ImageField(upload_to='./static/upload/')
