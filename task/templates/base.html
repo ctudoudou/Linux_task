@@ -77,6 +77,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <a href="#" id="loginButton"><img src="{% static 'img/login.png' %}"><span>用户登录</span></a>
                     <div id="loginBox">
                         <form id="loginForm" method="post" action="/user/?do=login">
+                            {% csrf_token %}
                             <fieldset id="body">
                                 <fieldset>
                                     <label for="username">Username</label>
@@ -89,7 +90,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <label for="checkbox"><input type="checkbox" id="checkbox"> <i>Remember
                                     me</i></label><br><br>
                                 <input type="submit" id="login" value="登 录">
-                                <a id="login" href="#">还没有账号？</a>
+                                <a id="login" href="/user/?do=register">还没有账号？</a>
                             </fieldset>
                         </form>
                     </div>

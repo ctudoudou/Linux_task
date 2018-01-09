@@ -10,7 +10,7 @@ class User(models.Model):
     用戶名, 年齡, 密碼, 郵箱, 權限(1: 管理員 ,2: 工作人員 ,3: 用戶)
     """
     username = models.CharField(max_length=30, unique=True, null=False)
-    age = models.IntegerField()
+    age = models.IntegerField(null=True)
     password = models.CharField(max_length=64)
     email = models.EmailField()
     permission = models.IntegerField(default=3)
