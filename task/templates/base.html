@@ -108,15 +108,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="content_top">
             <p style="color: #AD6C09">
                 ===================================================================================================================================</p>
-        {% if rooms %}
+        {% if rooms_list %}
         <div class="container">
    		<div class="col-md-4 bottom_nav">
    		   <div class="content_menu">
 				<ul>
-					<li class="active"><a href="zongtong.html">总统套房</a></li>
-					<li><a href="vip.html">VIP套房</a></li>
-					<li><a href="biaozhun.html">标准套房</a></li>
-					<li><a href="shangwu.html">商务套房</a></li>
+                    {% for i in rooms_list %}
+                        <li {% ifequal category i.category  %}class="active" {% endifequal %}><a href="/rooms/?c={{ i.category }}">{{ i.category }}</a></li>
+                    {% endfor %}
 				</ul>
 			</div>
 		</div>

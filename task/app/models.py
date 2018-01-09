@@ -44,3 +44,12 @@ class Latest_post(models.Model):
     content = models.CharField(max_length=500)
     img = models.ImageField(upload_to='./static/upload/')
     views = models.IntegerField(default=1)
+
+
+class Subscription(models.Model):
+    """
+    訂閱用戶
+    郵箱地址(無效驗), 訂閱時間
+    """
+    email=models.EmailField()
+    time=models.DateTimeField(auto_now_add=True)

@@ -22,9 +22,10 @@ def rooms(request):
     """房屋展示函數
     """
     user = islogin(request)
-    print(user)
-    rooms = True
-    return render(request, 'rooms.html', {'user': user, 'rooms': rooms})
+    rooms_list = Room.objects.values('category').distinct()
+    category = request.GET['c']
+    rooms = Room.objects.all().filter(category=category)
+    return render(request, 'rooms.html', {'user': user, 'rooms_list': rooms_list, 'category': category})
 
 
 def news(request):
@@ -55,28 +56,44 @@ def email(request):
     """提交郵箱
     """
     # TODO 獲取郵箱並返回當前頁
-    return HttpResponseRedirect(request.META['HTTP_REFERER'])
+    try:
+        new = Subscription(
+            email=request.POST['email']
+        )
+        new.save()
+        return HttpResponseRedirect(request.META['HTTP_REFERER'])
+    except:
+        return HttpResponseRedirect(request.META['HTTP_REFERER'])
 
 
 def user(request):
     """用户操作函数
+
+    Parameters
+    ----------
+    request
+        do=login 登陆
+        do=register 註冊
+    Returns
+    -------
+
     """
-    # TODO do=login 登陆 do=register
 
-    if request.GET['do']=='register':
-        if request.POST:
-            new_user=User(
-                username=request.POST['username'],
-                password=make_password(request.POST['password']),
-                email=request.POST['email'],
-            )
-            new_user.save()
-            return HttpResponseRedirect('/')
-        return render(request,'register.html',{})
-    elif request.GET['do']=='login':
-        user_=User.objects.filter(username=request.POST['username'])
-        if check_password(request.POST['password'],user_[0].password):
-            request.session['username']=request.POST['username']
+    try:
+        if request.GET['do'] == 'register':
+            if request.POST:
+                new_user = User(
+                    username=request.POST['username'],
+                    password=make_password(request.POST['password']),
+                    email=request.POST['email'],
+                )
+                new_user.save()
+                return HttpResponseRedirect('/')
+            return render(request, 'register.html', {})
+        elif request.GET['do'] == 'login':
+            user_ = User.objects.filter(username=request.POST['username'])
+            if check_password(request.POST['password'], user_[0].password):
+                request.session['username'] = request.POST['username']
+            return HttpResponseRedirect(request.META['HTTP_REFERER'])
+    except:
         return HttpResponseRedirect(request.META['HTTP_REFERER'])
-
-    return HttpResponseRedirect(request.META['HTTP_REFERER'])
