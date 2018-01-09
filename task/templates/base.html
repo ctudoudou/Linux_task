@@ -38,16 +38,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="col-sm-8 header-left">
                 <!--酒店logo-->
                 <div class="logo">
-                    <a href="/index"><img src="{% static 'img/logo.png' %}" alt=""/></a>
+                    <a href="/index/"><img src="{% static 'img/logo.png' %}" alt=""/></a>
                 </div>
                 <!--酒店菜单栏-->
                 <div class="menu">
                     <a class="toggleMenu" href="#"><img src="{% static 'img/nav.png' %}" alt=""/></a>
                     <ul class="nav" id="nav">
                         <li {% if index %}class="active"{% endif %}><a href="/">旅馆首页</a></li>
-                        <li {% if rooms %}class="active"{% endif %}><a href="/rooms">房间类型</a></li>
-                        <li {% if gallery %}class="active"{% endif %}><a href="/gallery">酒店环境</a></li>
-                        <li {% if news %}class="active"{% endif %}><a href="/news">酒店简介</a></li>
+                        <li {% if rooms %}class="active"{% endif %}><a href="/rooms/">房间类型</a></li>
+                        <li {% if gallery %}class="active"{% endif %}><a href="/gallery/">酒店环境</a></li>
+                        <li {% if news %}class="active"{% endif %}><a href="/news/">酒店简介</a></li>
                         <div class="clearfix"></div>
                     </ul>
                     <script type="text/javascript" src="{% static 'js/responsive-nav.js' %}"></script>
@@ -76,7 +76,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div id="loginContainer">
                     <a href="#" id="loginButton"><img src="{% static 'img/login.png' %}"><span>用户登录</span></a>
                     <div id="loginBox">
-                        <form id="loginForm">
+                        <form id="loginForm" method="post" action="/user/?do=login">
                             <fieldset id="body">
                                 <fieldset>
                                     <label for="username">Username</label>
@@ -133,10 +133,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <span>
                             {% csrf_token %}
                             <i><img src="{% static 'img/mail.png' %}" alt=""></i>
-                            <input type="text" value="Enter your email" onFocus="this.value = '';"
+                            <input name="email" type="text" value="Enter your email" onFocus="this.value = '';"
                                    onBlur="if (this.value == '') {this.value = 'Enter your email';}">
                             <label class="btn1 btn2 btn-2 btn-2g"> <input name="submit" type="submit" id="submit"
-                                                                          value="Subscribe"> </label>
+                                                                          value="submit"> </label>
                             <div class="clearfix"> </div>
                         </span>
                         </form>
