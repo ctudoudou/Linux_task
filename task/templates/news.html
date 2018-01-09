@@ -5,116 +5,61 @@
 {% block container %}
     <div class="container">
         <div class="col-md-4 wow fadeInLeft" data-wow-delay="0.4s">
-            <ul class="feature">
-                <li><i class="icon-trophy"></i></li>
-                <li class="feature_right"><h4>Excepteur occaecat</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor
-                        imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.
-                    </p>
-                </li>
-                <div class="clearfix"></div>
-            </ul>
-            <ul class="feature">
-                <li><i class="icon-tick"></i></li>
-                <li class="feature_right"><h4>Lorem ipsum dolor</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor
-                        imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.
-                    </p>
-                </li>
-                <div class="clearfix"></div>
-            </ul>
-            <ul class="feature">
-                <li><i class="icon-audio"></i></li>
-                <li class="feature_right"><h4>Hotel Services</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor
-                        imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.
-                    </p>
-                </li>
-                <div class="clearfix"></div>
-            </ul>
-            <ul class="feature last_grid">
-                <li><i class="icon-video"></i></li>
-                <li class="feature_right"><h4>Nemo ipsam</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor
-                        imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.
-                    </p>
-                </li>
-                <div class="clearfix"></div>
-            </ul>
+            {% for i in letf %}
+                <ul class="feature">
+                    <li><i class="icon-trophy"></i></li>
+                    <li class="feature_right"><h4>Excepteur occaecat</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id
+                            tempor
+                            imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.
+                        </p>
+                    </li>
+                    <div class="clearfix"></div>
+                </ul>
+            {% endfor %}
         </div>
         <div class="col-md-8 wow fadeInRight" data-wow-delay="0.4s">
             <div class="educate_grid">
-                <div class="col-md-6 room-grid">
-                    <div class="living_box"><a href="single.html">
-                        <img src="img/e4.jpg" class="img-responsive" alt=""/>
-                        <span class="sale-box">
+                {% for i in right1 %}
+                    <div class="col-md-6 room-grid">
+                        <div class="living_box"><a href="single.html">
+                            <img src="img/e4.jpg" class="img-responsive" alt=""/>
+                            <span class="sale-box">
 				  <span class="sale-label">Hall</span>
 			    </span>
-                    </a>
-                        <div class="living_desc desc1">
-                            <h3><a href="#">aliquam volutp</a></h3>
-                            <p>Lorem ipsum consectetuer adipiscing </p>
-                            <p class="educate"><img src="img/star1.png" alt=""/></p>
-                            <p class="price pr_box">$150</p>
-                            <div class="clearfix"></div>
+                        </a>
+                            <div class="living_desc desc1">
+                                <h3><a href="#">aliquam volutp</a></h3>
+                                <p>Lorem ipsum consectetuer adipiscing </p>
+                                <p class="educate"><img src="img/star1.png" alt=""/></p>
+                                <p class="price pr_box">$150</p>
+                                <div class="clearfix"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 room-grid">
-                    <div class="living_box"><a href="single.html">
-                        <img src="img/e3.jpg" class="img-responsive" alt=""/>
-                        <span class="sale-box">
-				  <span class="sale-label">Room</span>
-			    </span>
-                    </a>
-                        <div class="living_desc desc1">
-                            <h3><a href="#">aliquam volutp</a></h3>
-                            <p>Lorem ipsum consectetuer adipiscing </p>
-                            <p class="educate"><img src="img/star1.png" alt=""/></p>
-                            <p class="price pr_box">$150</p>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
                 <div class="clearfix"></div>
             </div>
             <div class="educate_grid1">
-                <div class="col-md-6 room-grid">
-                    <div class="living_box"><a href="single.html">
-                        <img src="img/e1.jpg" class="img-responsive" alt=""/>
-                        <span class="sale-box">
-				  <span class="sale-label">Balcony</span>
+                {% for i in right2 %}
+                    <div class="col-md-6 room-grid">
+                        <div class="living_box"><a href="single.html">
+                            <img src="img/e4.jpg" class="img-responsive" alt=""/>
+                            <span class="sale-box">
+				  <span class="sale-label">Hall</span>
 			    </span>
-                    </a>
-                        <div class="living_desc desc1">
-                            <h3><a href="#">aliquam volutp</a></h3>
-                            <p>Lorem ipsum consectetuer adipiscing </p>
-                            <p class="educate"><img src="img/star1.png" alt=""/></p>
-                            <p class="price pr_box">$150</p>
-                            <div class="clearfix"></div>
+                        </a>
+                            <div class="living_desc desc1">
+                                <h3><a href="#">aliquam volutp</a></h3>
+                                <p>Lorem ipsum consectetuer adipiscing </p>
+                                <p class="educate"><img src="img/star1.png" alt=""/></p>
+                                <p class="price pr_box">$150</p>
+                                <div class="clearfix"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 room-grid">
-                    <div class="living_box"><a href="single.html">
-                        <img src="{% static 'img/e2.jpg' %}" class="img-responsive" alt=""/>
-                        <span class="sale-box">
-				  <span class="sale-label">Pool</span>
-			    </span>
-                    </a>
-                        <div class="living_desc desc1">
-                            <h3><a href="#">aliquam volutp</a></h3>
-                            <p>Lorem ipsum consectetuer adipiscing </p>
-                            <p class="educate"><img src="img/star1.png" alt=""/></p>
-                            <p class="price pr_box">$150</p>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
                 <div class="clearfix"></div>
             </div>
         </div>

@@ -7,31 +7,34 @@
         <div class="content_middle_box">
             <div class="top_grid">
                 {% for i in list %}
-                    <div class="col-md-3 index-grids">
-                        <div class="grid1">
-                            <div class="view view-first">
-                                <div class="index_img"><img src="{{ i.img }}" class="img-responsive"
-                                                            alt=""/></div>
-                                <div class="mask">
-                                    <div class="info"><i class="search"> </i> Show More</div>
-                                    <ul class="mask_img">
-                                        <li class="star"><img src="{% static 'img/star.png' %}" alt=""/></li>
-                                        <li class="set"><img src="{% static 'img/set.png' %}" alt=""/></li>
-                                        <div class="clearfix"></div>
+                    {% if i.available %}
+                        <div class="col-md-3 index-grids">
+                            <div class="grid1">
+                                <div class="view view-first">
+                                    <div class="index_img"><img src="{{ i.img }}" class="img-responsive"
+                                                                alt=""/></div>
+                                    <div class="mask">
+                                        <a href="/yuding/?id={{ i.id }}" class="info"> 預定</a>
+                                        <ul class="mask_img">
+                                            <li class="star"><img src="{% static 'img/star.png' %}" alt=""/></li>
+                                            <li class="set"><img src="{% static 'img/set.png' %}" alt=""/></li>
+                                            <div class="clearfix"></div>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="inner_wrap">
+                                    <h3>{{ i.evaluation }}</h3>
+                                    <ul class="star1">
+                                        <h4 class="green">價格: {{ i.price }}</h4>
+                                        <h4 class="green">Home type: {{ i.category }}</h4>
+
+                                        <li><a href="#"> <img src="{% static 'img/' %}{{ i.fraction }}"
+                                                              alt="">({{ i.number }})</a></li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="inner_wrap">
-                                <h3>{{ i.evaluation }}</h3>
-                                <ul class="star1">
-                                    <h4 class="green">價格: {{ i.price }}</h4>
-                                    <h4 class="green">Home type: {{ i.category }}</h4>
-
-                                    <li><a href="#"> <img src="{% static 'img/' %}{{ i.fraction }}" alt="">({{ i.number }})</a></li>
-                                </ul>
-                            </div>
                         </div>
-                    </div>
+                    {% endif %}
                 {% endfor %}
                 <div class="clearfix"></div>
             </div>

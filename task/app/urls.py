@@ -31,5 +31,6 @@ urlpatterns = [
     path('article/',article,name='article'),
     path('email/',email,name='email'),
     path('gallery/',gallery,name='gallery'),
-    path('user/',user,name='user')
+    path('user/',user,name='user'),
+    path('yuding/',yuding,name='yuding'),
 ]

@@ -101,3 +101,27 @@ def user(request):
             return HttpResponseRedirect(request.META['HTTP_REFERER'])
     except:
         return HttpResponseRedirect(request.META['HTTP_REFERER'])
+
+
+def yuding(request):
+    """
+    預定房間
+    Parameters
+    ----------
+    request
+
+    Returns
+    -------
+
+    """
+
+    id = request.GET['id']
+    room = Room.objects.filter(id=id)
+    try:
+        if request.GET['do'] == 'active':
+            room.update(available=0)
+            return render(request, 'skip.html', {'skip': '/', 'message': '預定成功，'})
+    except:
+        pass
+    return render(request, 'yuding.html', {'room': room})
+    # return HttpResponseRedirect('/')

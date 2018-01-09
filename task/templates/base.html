@@ -8,6 +8,9 @@
     <!-- Custom Theme files -->
     <link href="{% static 'css/style.css' %}" rel='stylesheet' type='text/css'/>
     <!-- Custom Theme files -->
+    {% if skip %}
+    <meta http-equiv="Refresh"  content="3; Url={{ skip }}" >
+    {% endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="keywords" content="Hotel Deluxe Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
