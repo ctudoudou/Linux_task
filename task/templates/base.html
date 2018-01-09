@@ -74,7 +74,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <!--登录和注册-->
             <div class="col-sm-4 header_right">
                 <div id="loginContainer">
-                    <a href="#" id="loginButton"><img src="{% static 'img/login.png' %}"><span>用户登录</span></a>
+                    {% if user %}
+                        <img src="{% static 'img/login.png' %}"><span>歡迎您，{{ user.username }}</span>
+                    {% else %}
+                        <a href="#" id="loginButton"><img src="{% static 'img/login.png' %}"><span>用户登录</span></a>
+                    {% endif %}
                     <div id="loginBox">
                         <form id="loginForm" method="post" action="/user/?do=login">
                             {% csrf_token %}

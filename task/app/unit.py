@@ -5,7 +5,7 @@
 # @File    : unit.py
 # @Software: PyCharm
 
-from .models import *
+from .models import User
 
 
 def islogin(request):

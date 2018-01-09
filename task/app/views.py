@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponseRedirect
+from django.contrib.auth.hashers import make_password, check_password
 from .models import *
 from .unit import islogin
 
@@ -21,6 +22,7 @@ def rooms(request):
     """房屋展示函數
     """
     user = islogin(request)
+    print(user)
     rooms = True
     return render(request, 'rooms.html', {'user': user, 'rooms': rooms})
 
@@ -62,10 +64,19 @@ def user(request):
     # TODO do=login 登陆 do=register
 
     if request.GET['do']=='register':
+        if request.POST:
+            new_user=User(
+                username=request.POST['username'],
+                password=make_password(request.POST['password']),
+                email=request.POST['email'],
+            )
+            new_user.save()
+            return HttpResponseRedirect('/')
         return render(request,'register.html',{})
     elif request.GET['do']=='login':
-
-
+        user_=User.objects.filter(username=request.POST['username'])
+        if check_password(request.POST['password'],user_[0].password):
+            request.session['username']=request.POST['username']
         return HttpResponseRedirect(request.META['HTTP_REFERER'])
 
     return HttpResponseRedirect(request.META['HTTP_REFERER'])

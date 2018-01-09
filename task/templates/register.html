@@ -15,7 +15,7 @@
 		<p>Link the world. Share to world.</p>
 	</div>
 	
-	<form action="" method="post" id="registerForm">
+	<form action="/user/?do=register" method="post" id="registerForm">
 		<div>
 			<input type="text" name="username" class="username" placeholder="您的用户名" autocomplete="off"/>
 		</div>
@@ -25,16 +25,16 @@
 		<div>
 			<input type="password" name="confirm_password" class="confirm_password" placeholder="再次输入密码" oncontextmenu="return false" onpaste="return false" />
 		</div>
-		<div>
-			<input type="text" name="phone_number" class="phone_number" placeholder="输入手机号码" autocomplete="off" id="number"/>
-		</div>
+{#		<div>#}
+{#			<input type="text" name="phone_number" class="phone_number" placeholder="输入手机号码" autocomplete="off" id="number"/>#}
+{#		</div>#}
 		<div>
 			<input type="email" name="email" class="email" placeholder="输入邮箱地址" oncontextmenu="return false" onpaste="return false" />
 		</div>
-
+        {% csrf_token %}
 		<button id="submit" type="submit">注 册</button>
 	</form>
-	<a href="index.html">
+	<a href="/">
 		<button type="button" class="register-tis">已经有账号？</button>
 	</a>
 
