@@ -29,4 +29,5 @@ urlpatterns = [
     path('rooms/', rooms, name='room'),
     path('news/', news,name='news'),
     path('article/',article,name='article'),
+    path('email/',email,name='email')
 ]
