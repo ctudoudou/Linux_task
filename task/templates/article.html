@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block container %}
+    <div class="container">
+        <div class="col-md-8 sing">
+            {% for i in acticals %}
+                <div class=" single-grid">
+                    <img class="img-responsive" src="/{{ i.img }}" alt="/{{ i.img }}" class="img-responsive"
+                         style="width: 750px;height: 300px;margin-top: 20px;">
+                    <div class="lone-line">
+                        <h2>{{ i.title }}</h2>
+                        <div class="cal">
+                            <ul>
+                                <li><span><i class="glyphicon glyphicon-calendar"> </i>{{ i.time }}</span></li>
+                                <li><a href="#"><i class="glyphicon glyphicon-comment"> </i>{{ i.views }}</a></li>
+                            </ul>
+                        </div>
+                        {{ i.content|safe }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="clearfix"></div>
+
+    </div>
+
+{% endblock %}

@@ -20,7 +20,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         window.scrollTo(0, 1);
     } </script>
     <!--webfont-->
-    {#<link href='http://fonts.useso.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>#}
+    <link href='{% static 'css/fonts.css' %}' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/login.js' %}"></script>
     <script src="{% static 'js/jquery.easydropdown.js' %}"></script>
@@ -38,16 +38,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="col-sm-8 header-left">
                 <!--酒店logo-->
                 <div class="logo">
-                    <a href="index.html"><img src="{% static 'img/logo.png' %}" alt=""/></a>
+                    <a href="/index"><img src="{% static 'img/logo.png' %}" alt=""/></a>
                 </div>
                 <!--酒店菜单栏-->
                 <div class="menu">
                     <a class="toggleMenu" href="#"><img src="{% static 'img/nav.png' %}" alt=""/></a>
                     <ul class="nav" id="nav">
-                        <li class="active"><a href="index.html">旅馆首页</a></li>
-                        <li><a href="rooms.html">房间类型</a></li>
-                        <li><a href="gallery.html">酒店环境</a></li>
-                        <li><a href="news.html">酒店简介</a></li>
+                        <li {% if index %}class="active"{% endif %}><a href="/">旅馆首页</a></li>
+                        <li {% if rooms %}class="active"{% endif %}><a href="/rooms">房间类型</a></li>
+                        <li {% if gallery %}class="active"{% endif %}><a href="/gallery">酒店环境</a></li>
+                        <li {% if news %}class="active"{% endif %}><a href="/news">酒店简介</a></li>
                         <div class="clearfix"></div>
                     </ul>
                     <script type="text/javascript" src="{% static 'js/responsive-nav.js' %}"></script>
@@ -103,6 +103,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="content_top">
             <p style="color: #AD6C09">
                 ===================================================================================================================================</p>
+        {% if rooms %}
+        <div class="container">
+   		<div class="col-md-4 bottom_nav">
+   		   <div class="content_menu">
+				<ul>
+					<li class="active"><a href="zongtong.html">总统套房</a></li>
+					<li><a href="vip.html">VIP套房</a></li>
+					<li><a href="biaozhun.html">标准套房</a></li>
+					<li><a href="shangwu.html">商务套房</a></li>
+				</ul>
+			</div>
+		</div>
+   	</div>
+        {% endif %}
         </div>
     {% endblock %}
     <div class="content_middle">
