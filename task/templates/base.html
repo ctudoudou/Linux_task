@@ -129,8 +129,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="container">
                     <div class="footer_top">
                         <h3>Subscribe to our newsletter</h3>
-                        <form>
+                        <form action="/email/?post=email" method="post">
                         <span>
+                            {% csrf_token %}
                             <i><img src="{% static 'img/mail.png' %}" alt=""></i>
                             <input type="text" value="Enter your email" onFocus="this.value = '';"
                                    onBlur="if (this.value == '') {this.value = 'Enter your email';}">

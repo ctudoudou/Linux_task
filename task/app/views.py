@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponseRedirect
 from .models import *
 
 
@@ -40,3 +40,10 @@ def article(request):
 
     actical = Latest_post.objects.filter(id=request.GET['id'])
     return render(request, 'article.html', {'acticals': actical})
+
+
+def email(request):
+    """提交郵箱
+    """
+
+    return HttpResponseRedirect('/')
