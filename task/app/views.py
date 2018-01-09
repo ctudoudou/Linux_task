@@ -23,9 +23,13 @@ def rooms(request):
     """
     user = islogin(request)
     rooms_list = Room.objects.values('category').distinct()
-    category = request.GET['c']
-    rooms = Room.objects.all().filter(category=category)
-    return render(request, 'rooms.html', {'user': user, 'rooms_list': rooms_list, 'category': category})
+    try:
+        category = request.GET['c']
+        rooms = Room.objects.all().filter(category=category)
+    except:
+        rooms = Room.objects.all()
+        category = None
+    return render(request, 'rooms.html', {'user': user, 'rooms_list': rooms_list, 'category': category, 'wow': rooms})
 
 
 def news(request):
