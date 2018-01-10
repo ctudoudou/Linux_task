@@ -53,3 +53,9 @@ class Subscription(models.Model):
     """
     email=models.EmailField()
     time=models.DateTimeField(auto_now_add=True)
+
+
+class Hotel_environment(models.Model):
+    """
+    酒店環境數據庫
+    """

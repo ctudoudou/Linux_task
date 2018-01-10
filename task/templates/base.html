@@ -9,7 +9,7 @@
     <link href="{% static 'css/style.css' %}" rel='stylesheet' type='text/css'/>
     <!-- Custom Theme files -->
     {% if skip %}
-    <meta http-equiv="Refresh"  content="3; Url={{ skip }}" >
+        <meta http-equiv="Refresh" content="3; Url={{ skip }}">
     {% endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -33,6 +33,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script>
         new WOW().init();
     </script>
+    {% if gallery %}
+        <!------ Light Box ------>
+        <link rel="stylesheet" href="{% static 'css/swipebox.css' %}">
+        <script src="{% static 'js/jquery.swipebox.min.js' %}"></script>
+        <script type="text/javascript">
+            jQuery(function ($) {
+                $(".swipebox").swipebox();
+            });
+        </script>
+        <!------ Eng Light Box ------>
+    {% endif %}
 </head>
 <body>
 {% block body %}
@@ -111,19 +122,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="content_top">
             <p style="color: #AD6C09">
                 ===================================================================================================================================</p>
-        {% if rooms_list %}
-        <div class="container">
-   		<div class="col-md-4 bottom_nav">
-   		   <div class="content_menu">
-				<ul>
-                    {% for i in rooms_list %}
-                        <li {% ifequal category i.category  %}class="active" {% endifequal %}><a href="/rooms/?c={{ i.category }}">{{ i.category }}</a></li>
-                    {% endfor %}
-				</ul>
-			</div>
-		</div>
-   	</div>
-        {% endif %}
+            {% if rooms_list %}
+                <div class="container">
+                    <div class="col-md-4 bottom_nav">
+                        <div class="content_menu">
+                            <ul>
+                                {% for i in rooms_list %}
+                                    <li {% ifequal category i.category %}class="active" {% endifequal %}><a
+                                            href="/rooms/?c={{ i.category }}">{{ i.category }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
         </div>
     {% endblock %}
     <div class="content_middle">
