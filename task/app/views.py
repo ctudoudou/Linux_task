@@ -49,6 +49,7 @@ def article(request):
 
 def gallery(request):
     """酒店環境頁面
+    TODO 酒店環境數據庫連結
     """
     user = islogin(request)
     posts = Latest_post.objects.all().order_by('time')[:2]
@@ -58,8 +59,8 @@ def gallery(request):
 
 def email(request):
     """提交郵箱
+    TODO 添加跳轉
     """
-    # TODO 獲取郵箱並返回當前頁
     try:
         new = Subscription(
             email=request.POST['email']
@@ -106,13 +107,6 @@ def user(request):
 def yuding(request):
     """
     預定房間
-    Parameters
-    ----------
-    request
-
-    Returns
-    -------
-
     """
 
     id = request.GET['id']

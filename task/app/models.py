@@ -58,4 +58,8 @@ class Subscription(models.Model):
 class Hotel_environment(models.Model):
     """
     酒店環境數據庫
+    圖片名稱, 圖片文件, 圖片簡介
     """
+    title=models.CharField(max_length=10)
+    img=models.ImageField(upload_to='./static/upload/')
+    content=models.CharField(max_length=100)
