@@ -7,14 +7,14 @@
             <div class="entertain_box wow fadeInLeft" data-wow-delay="0.4s">
                 {% for i in fadeleft %}
                     <div class="col-md-3 grid_box">
-                        <a href="{% static 'img/p1.jpg' %}" class="swipebox" title="Image Title"> <img
-                                src="{% static 'img/p1.jpg' %}"
+                        <a href="/{{ i.img }}" class="swipebox" title="Image Title"> <img
+                                src="/{{ i.img }}"
                                 class="img-responsive"
                                 alt=""><span
                                 class="zoom-icon"></span> </a>
                         <div class="grid_box2">
-                            <h4><a href="#">Hotel</a></h4>
-                            <p>voluptatem sequi</p>
+                            <h4><a href="">{{ i.title }}</a></h4>
+                            <p>{{ i.content }}</p>
                         </div>
                     </div>
                 {% endfor %}
@@ -23,14 +23,14 @@
             <div class="entertain_box1 wow fadeInRight" data-wow-delay="0.4s">
                 {% for i in faderight %}
                     <div class="col-md-3 grid_box">
-                        <a href="{% static 'img/p1.jpg' %}" class="swipebox" title="Image Title"> <img
-                                src="{% static 'img/p1.jpg' %}"
+                        <a href="/{{ i.img }} class="swipebox" title="Image Title"> <img
+                                src="/{{ i.img }}"
                                 class="img-responsive"
                                 alt=""><span
                                 class="zoom-icon"></span> </a>
                         <div class="grid_box2">
-                            <h4><a href="#">Hotel</a></h4>
-                            <p>voluptatem sequi</p>
+                            <h4><a href="#">{{ i.title }}</a></h4>
+                            <p>{{ i.content }}</p>
                         </div>
                     </div>
                 {% endfor %}

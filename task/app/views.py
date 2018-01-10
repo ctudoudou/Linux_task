@@ -36,6 +36,7 @@ def news(request):
     """新聞模塊
     """
     user = islogin(request)
+
     return render(request, 'news.html', {'user': user, 'news': True})
 
 
@@ -52,9 +53,13 @@ def gallery(request):
     TODO 酒店環境數據庫連結
     """
     user = islogin(request)
-    posts = Latest_post.objects.all().order_by('time')[:2]
+
+    fadeleft = Hotel_environment.objects.all().order_by('-id')[0:4]
+    faderight = Hotel_environment.objects.all().order_by('-id')[4:8]
+
+    posts = Latest_post.objects.all().order_by('-time')[:2]
     return render(request, 'gallery.html',
-                  {'user': user, 'fadeleft': [1, 2, 3, 4], 'faderight': [1, 2, 3, 4], 'l_post': posts, 'gallery': True})
+                  {'user': user, 'fadeleft': fadeleft, 'faderight': faderight, 'l_post': posts, 'gallery': True})
 
 
 def email(request):
@@ -109,13 +114,20 @@ def yuding(request):
     預定房間
     """
 
-    id = request.GET['id']
-    room = Room.objects.filter(id=id)
+    try:
+        id = request.GET['id']
+        room = Room.objects.filter(id=id)
+    except:
+        return render(request, 'skip.html', {'skip': '/rooms/', 'message': '异常请求，'})
     try:
         if request.GET['do'] == 'active':
-            room.update(available=0)
+            if room[0].available == 0:
+                return render(request, 'skip.html', {'skip': '/rooms/', 'message': '預定失败，'})
+            room.update(available=0,user=request.session['username'])
             return render(request, 'skip.html', {'skip': '/', 'message': '預定成功，'})
     except:
         pass
+    if room[0].available == 0:
+        return render(request, 'yuding.html', {'room': room, 'error': '已预订'})
     return render(request, 'yuding.html', {'room': room})
     # return HttpResponseRedirect('/')

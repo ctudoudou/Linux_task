@@ -63,3 +63,5 @@ class Hotel_environment(models.Model):
     title=models.CharField(max_length=10)
     img=models.ImageField(upload_to='./static/upload/')
     content=models.CharField(max_length=100)
+
+

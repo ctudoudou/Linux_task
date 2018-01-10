@@ -5,3 +5,4 @@ from .models import *
 
 admin.site.register(Room)
 admin.site.register(Latest_post)
+admin.site.register(Hotel_environment)
