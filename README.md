@@ -3,7 +3,10 @@
 
 ##### Project website Address:(https://github.com/ctudoudou/Linux_task)
 
-中文說明(正體中文)：[點擊這裡](./README-zh.md) 
+PDF Document: [click here]()
+
+中文說明(正體中文)：[點擊這裡](./README-zh.md)
+
 
 ### Project Dependencies Library
 See Requirements.txt file
