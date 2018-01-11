@@ -5,7 +5,7 @@
 
 English version: [click here](./README.md)
 
-PDF Document: [click here](./README.md)
+PDF Document: [click here](https://github.com/ctudoudou/Linux_task/blob/master/Hotel.pdf)
 
 ### 項目依賴庫
 見 requirements.txt 文件
