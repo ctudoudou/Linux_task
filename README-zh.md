@@ -4,6 +4,7 @@
 ##### 項目地址: (https://github.com/ctudoudou/Linux_task)
 
 English version: [click here](./README.md)
+PDF Document: [click here](./README.md)
 
 ### 項目依賴庫
 見 requirements.txt 文件
