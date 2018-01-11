@@ -1,5 +1,5 @@
 # Linux task 項目說明
-##### 這是一個簡單的基於Python3 Django的酒店預定系統，現已初步完成系統原型。
+##### 這是一個簡單的基於Python3 Django的酒店預定系統，現已初步完成系統原型。項目地址: (https://github.com/ctudoudou/Linux_task)
 
 English version: (click here) [./README.md]
 
