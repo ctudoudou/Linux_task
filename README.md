@@ -1,7 +1,9 @@
 # Linux Task Project Description
-##### This is a simple hotel reservation system based on Python3 Django, which is now a prototype of the system.Project website Address:(https://github.com/ctudoudou/Linux_task)
+##### This is a simple hotel reservation system based on Python3 Django, which is now a prototype of the system.
 
-中文說明(正體中文)：(點擊這裡)[./README-zh.md] 
+##### Project website Address:(https://github.com/ctudoudou/Linux_task)
+
+中文說明(正體中文)：[點擊這裡](./README-zh.md) 
 
 ### Project Dependencies Library
 See Requirements.txt file
@@ -17,7 +19,7 @@ How to use ： Enter at command line ```pip3 -r install requirements.txt```
 
 1. This project is only for the development and use of operations, is strictly prohibited without modification directly to the production environment. All the consequences are borne by the user.
 2. The front end model of this project is provided by [模板之家] (http://www.mycodes.net/).
-3. There are known bugs in the project and have not been fully amended. If you find more bugs or bug fixes, we will gladly accept your proposal.
+3. There are known bugs[1](#note-list-of-known-bugs) in the project and have not been fully amended. If you find more bugs or bug fixes, we will gladly accept your proposal.
 
 
 
