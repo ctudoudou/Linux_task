@@ -1,7 +1,7 @@
 # Linux Task Project Description
 ##### This is a simple hotel reservation system based on Python3 Django, which is now a prototype of the system.
 
-
+中文說明(正體中文)：(點擊這裡)[./README-zh.md] 
 
 ### Project Dependencies Library
 See Requirements.txt file
