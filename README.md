@@ -18,7 +18,7 @@ How to use ： Enter at command line ```pip3 -r install requirements.txt```
 ### Project Statement
 
 1. This project is only for the development and use of operations, is strictly prohibited without modification directly to the production environment. All the consequences are borne by the user.
-2. The front end model of this project is provided by [模板之家] (http://www.mycodes.net/).
+2. The front end model of this project is provided by [模板之家](http://www.mycodes.net/).
 3. There are known bugs[1](#note-list-of-known-bugs) in the project and have not been fully amended. If you find more bugs or bug fixes, we will gladly accept your proposal.
 
 
