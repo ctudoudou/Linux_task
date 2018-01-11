@@ -70,4 +70,4 @@ How to use ： Enter at command line ```pip3 -r install requirements.txt```
 
 
 
-Project participation in collaboration: 孙楠，曹國鴻(土豆豆)
+Project participation in collaboration: 孙南，曹國鴻(土豆豆)

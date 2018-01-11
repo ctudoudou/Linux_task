@@ -71,4 +71,4 @@ English version: [click here](./README.md)
 
 
 
-項目參與協作：孙楠，曹國鴻(土豆豆)
+項目參與協作：孙南，曹國鴻(土豆豆)
